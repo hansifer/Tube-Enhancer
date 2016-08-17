@@ -10,7 +10,7 @@
 
 - Active enhancement can be toggled on or off by clicking on the Tube Enhancer browser action button.
 
-<img src="http://hansifer.com/hosted-assets/tube-enhancer/thumb-hover.png">
+<img src="http://hansifer.com/hosted-assets/tube-enhancer/thumb-Hover.png">
 
 ### Browser Support
 
