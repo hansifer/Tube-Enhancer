@@ -18,15 +18,15 @@ Currently Chrome only.
 
 ### Caveats
 
-- Content scripts are inherently brittle. Since this Tube Enhancer relies on assumptions about the YouTube UI, it may break as YouTube rolls out UI changes.
+- Content scripts are inherently brittle. Since Tube Enhancer relies on assumptions about the YouTube UI, it may break as YouTube rolls out UI changes.
 
 - Enhancement is currently limited specifically to the subscriptions feed (https://www.youtube.com/feed/subscriptions).
 
 ### Technical Notes
 
-- Because of the way that YouTube implements navigation (via pushState), polling for a new thumb container element is the most robust way to ensure that we consistently attach the necessary hide video button element and delegated mouseover and click events to the subscription feed. Polling performance, while hardware-dependent, is not a concern in this case since the ratio of polling duration to period is extremely small (~0.00007 on my machine).
+- Because of the way that YouTube implements navigation (via pushState), polling for a new thumb container element is the most robust way to ensure that we consistently attach the necessary hide video button element and delegated mouseover and click events to the subscription feed. Polling performance, while hardware-dependent, is not a concern in this case since the ratio of polling duration to period is extremely small (~0.00007 on my machine given a 700ms period).
 
-- A click on the hide video button relays a synthetic click on the corresponding video's "Hide" menu item and updates the video item's inline css to hide it immediately. The hide is animated via an (externally-defined) css transition.
+- A click on the hide video button relays a synthetic click on the corresponding video's "Hide" menu item and updates the video item's inline css to hide it immediately. The hide is animated via an externally-defined css transition.
 
 - jQuery is the only dependency.
 
