@@ -1,0 +1,45 @@
+{
+  "version": "1.0.2",
+  "name": "Tube Enhancer",
+  "description": "Enhance the UX of the subscriptions feed",
+  "minimum_chrome_version": "45",
+  "manifest_version": 2,
+  "background": {
+    "scripts": [
+      "bg.js"
+    ]
+  },
+  "icons": {
+    "16": "img/logo16.png",
+    "19": "img/logo19.png",
+    "32": "img/logo32.png",
+    "36": "img/logo36.png",
+    "38": "img/logo38.png",
+    "48": "img/logo48.png",
+    "64": "img/logo64.png",
+    "96": "img/logo96.png",
+    "128": "img/logo128.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "img/logo16_off.png",
+      "19": "img/logo19_off.png",
+      "38": "img/logo38_off.png"
+    },
+    "default_title": "Enhance is ON"
+  },
+  "content_security_policy": "script-src 'self'; object-src 'self'",
+  "content_scripts": [{
+    "all_frames": false,
+    "matches": ["https://www.youtube.com/*"],
+    "js": ["inject.js"],
+    "run_at": "document_start"
+  }],
+  "permissions": [
+    "https://www.youtube.com/*"
+  ],
+  "web_accessible_resources": [
+    "img/x.png",
+    "img/x-white.png"
+  ]
+}
